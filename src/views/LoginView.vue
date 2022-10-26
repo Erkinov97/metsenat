@@ -8,14 +8,14 @@ const authStore = useAuthStore();
 
 let checked = ref(false);
 const user = ref({
-  username: "metsenatadmin",
-  password: "uF9aH1vZ3bV2kN2y",
+  username: "",
+  password: "",
 });
 function onSubmit() {
-  // if (!checked.value) {
-  authStore.logIn(user.value);
-  router.push('/')
-  // }
+  if (checked.value) {
+    authStore.logIn(user.value);
+    router.push("/");
+  }
 }
 </script>
 
@@ -34,7 +34,6 @@ function onSubmit() {
             for="username"
           >
             LOGIN
-            {{ user.username }}
           </label>
           <input
             class="bg-[#e0e7ff33] rounded-md w-full border py-[12px] px-[15.5px] border-[#E0E7FF] leading-tight focus:outline-none focus:shadow-outline"
@@ -50,7 +49,6 @@ function onSubmit() {
             for="password"
           >
             PAROL
-            {{ user.password }}
           </label>
           <input
             class="bg-[#e0e7ff33] rounded-md w-full border py-[12px] px-[15.5px] border-[#E0E7FF] leading-tight focus:outline-none focus:shadow-outline"
