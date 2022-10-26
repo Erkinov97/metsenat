@@ -1,1 +1,12 @@
 @import './base.css';
+
+#app{
+    @apply bg-[#E5E5E5]
+}
+header{
+    @apply w-full mx-auto bg-[#FFFFFF] py-5 px-[120px] shadow-sm
+}
+
+nav .active {
+    @apply  text-[#FFFFFF] bg-[#2E5BFF];
+}
