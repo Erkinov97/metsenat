@@ -5,5 +5,7 @@ import TheNavbar from "../components/TheNavbar.vue";
 <template>
   <TheHeader />
   <TheNavbar />
-  <div>Student</div>
+  <main class="max-w-[1400px] w-full mx-auto px-[120px]">
+    <TheTable />
+  </main>
 </template>

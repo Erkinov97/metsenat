@@ -5,11 +5,11 @@ import IocnChewronLeft from "./icons/IocnChewronLeft.vue";
 </script>
 <template>
   <div class="w-full mx-auto overflow-x-auto relative">
-    <table class="w-full text-sm dark:text-gray-400">
+    <table class="w-full whitespace-nowrap">
       <thead
         class="uppercase text-left text-[#B1B1B8] font-normal text-[12px] leading-[14px]"
       >
-        <tr>
+        <tr class="text-center">
           <th scope="col" class="py-3 px-6">#</th>
           <th scope="col" class="py-3 px-6">f.i.sh.</th>
           <th scope="col" class="py-3 px-6">Tel.Raqami</th>
@@ -20,51 +20,56 @@ import IocnChewronLeft from "./icons/IocnChewronLeft.vue";
           <th scope="col" class="py-3 px-6">Amallar</th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          v-for="(item, index) in 9"
-          :key="index"
-          class="mb-3 bg-[#FFFFFF] dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-        >
-          <th
-            scope="row"
-            class="rounded-l-lg py-[25px] px-6 font-medium text-gray-900 whitespace-nowrap dark:text-[#FFFFFF]"
-          >
-            {{ index + 1 }}
-          </th>
-          <td class="py-4 px-6">Alimov Abror Xabibullayevich</td>
-          <td class="py-4 px-6">+99899 973-72-60</td>
-          <td class="py-4 px-6">30 000 000 UZS</td>
-          <td class="py-4 px-6">0 UZS</td>
-          <td class="py-4 px-6">15.01.2021</td>
-          <td class="py-4 px-6">Yangi</td>
-          <th class="rounded-r-lg py-4 px-6">
+      <tbody v-for="item in 9" :key="item">
+        <tr tabindex="0" class="bg-white text-center focus:outline-none h-16">
+          <td class="pl-1.5 rounded-l-lg">
+            <p class="text-base font-medium leading-none text-gray-700 mr-2">1</p>
+          </td>
+          <td class="pl-7.5">
+            <p class="text-base font-medium leading-none text-gray-700 mr-2">
+              Alimov Abror Xabibullayevich
+            </p>
+          </td>
+          <td class="pl-4">
+            <p class="text-sm leading-none text-gray-600 ml-2">+99899 973-72-60</p>
+          </td>
+          <td class="pl-4">
+            <p class="text-sm leading-none text-gray-600 ml-2">30 000 000 UZS</p>
+          </td>
+          <td class="pl-4">
+            <p class="text-sm leading-none text-gray-600 ml-2">0 UZS</p>
+          </td>
+          <td class="pl-4">
+            <p class="text-sm leading-none text-gray-600 ml-2">15.01.2021</p>
+          </td>
+          <td class="pl-4">
+            <p class="text-sm leading-none text-gray-600 ml-2">Yangi</p>
+          </td>
+          <td class="pl-4 rounded-r-lg">
             <button
-              href="#"
+              type="button"
               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
             >
               <IconEye />
             </button>
-          </th>
+          </td>
         </tr>
+        <tr class="h-4"></tr>
       </tbody>
     </table>
+
     <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
       <div>
         <p class="text-sm text-gray-700">
-          Showing
+          <span class="font-medium">59</span>
+          {{ " " }}
+          tadan
           {{ " " }}
           <span class="font-medium">1</span>
-          {{ " " }}
-          to
-          {{ " " }}
+          -
           <span class="font-medium">10</span>
           {{ " " }}
-          of
-          {{ " " }}
-          <span class="font-medium">97</span>
-          {{ " " }}
-          results
+          ko‘rsatilmoqda
         </p>
       </div>
       <div>

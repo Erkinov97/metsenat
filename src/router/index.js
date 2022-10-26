@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import DashboardView from '../views/DashboardView.vue'
 import SponsorsView from '../views/SponsorsView.vue'
 import StudentsView from '../views/StudentsView.vue'
 import LoginView from '../views/LoginView.vue'
@@ -10,8 +10,8 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'dashboard',
+      component: DashboardView,
       meta: { requiresAuth: true },
     },
     {
@@ -52,7 +52,6 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     const loggedIn = localStorage.getItem('user')
-
     if (loggedIn) {
       next()
     } else {

@@ -16,7 +16,8 @@ export const useAuthStore = defineStore('auth', {
         })
         .then((res) => {
           this.user = res.data
-          localStorage.setItem('user', this.user)
+          localStorage.setItem('user', JSON.stringify(this.user))
+          axios.defaults.headers.common['Authorization'] = `Bearer ${this.user.token}`
         })
         .catch((e) => {
           console.log(e)
@@ -25,7 +26,6 @@ export const useAuthStore = defineStore('auth', {
     logOut() {
       this.user = undefined
       localStorage.removeItem('user')
-      axios.defaults.headers.common['Authorization'] = null
       location.reload()
       console.log('log out')
     },
